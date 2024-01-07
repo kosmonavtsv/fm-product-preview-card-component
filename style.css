@@ -1,0 +1,193 @@
+:root {
+  /* typography  */
+  --ff-serif: 'Fraunces', serif;
+  --ff-sans-serif: 'Montserrat', sans-serif;
+
+  --fs-600: 2rem;
+  --fs-400: 0.875rem;
+  --fs-300: 0.8125rem;
+  --fs-200: 0.75rem;
+
+  --lh-600: 1;
+  --lh-400: 1.64;
+  --lh-300: 1.77;
+
+  /* colors */
+  --clr-primary-darker: hsl(157, 43%, 18%);
+  --clr-primary-dark: hsl(158, 36%, 37%);
+  --clr-primary-light: hsl(30, 38%, 92%);
+
+  --clr-neutral-dark: hsl(212, 21%, 14%);
+  --clr-neutral-light: hsl(228, 12%, 48%);
+  --clr-neutral-white: hsl(0, 0%, 100%);
+}
+
+/* -------- */
+/* Reset    */
+/* -------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+/* --------- */
+/* Page      */
+/* --------- */
+
+body {
+  background: var(--clr-primary-light);
+  min-height: 100vh;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.75rem 1rem;
+}
+
+/* --------- */
+/* Card      */
+/* --------- */
+
+.card-container {
+  container: card-container / inline-size;
+  flex: 1;
+  max-width: 37.5rem;
+}
+
+.card {
+  --card-bg: var(--clr-neutral-white);
+  --card-clr: var(--clr-neutral-light);
+  --card-font: 400 var(--fs-400) / var(--lh-400) var(--ff-sans-serif);
+
+  --img-mask-gradient: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+
+  --label-font: 500 var(--fs-200) / normal var(--ff-sans-serif);
+  --label-letter-spacing: 0.3125rem;
+
+  --title-clr: var(--clr-neutral-dark);
+  --title-font: 700 var(--fs-600) / var(--lh-600) var(--ff-serif);
+
+  --price-clr: var(--clr-primary-dark);
+  --price-font: 700 var(--fs-600) / var(--lh-600) var(--ff-serif);
+  --old-price-font: 500 var(--fs-300) / var(--lh-300) var(--ff-sans-serif);
+
+  --btn-clr: var(--clr-neutral-white);
+  --btn-bg: var(--clr-primary-dark);
+  --btn-hover-bg: var(--clr-primary-darker);
+  --btn-font: 700 var(--fs-400) / normal var(--ff-sans-serif);
+
+  --card-content-padding: 1.5rem;
+  --label-spacer: 0.75rem;
+  --title-spacer: 1rem;
+  --description-spacer: 1.5rem;
+  --price-spacer: 1.25rem;
+
+  color: var(--card-clr);
+  background: var(--card-bg);
+  font: var(--card-font);
+  border-radius: 0.625rem;
+  overflow: hidden;
+}
+
+.card__img {
+  background: var(--img-mask-gradient),
+    center / cover url(images/image-product-mobile.jpg);
+  aspect-ratio: 686 / 489;
+}
+
+.card__content {
+  padding: var(--card-content-padding);
+  display: flex;
+  flex-direction: column;
+}
+
+.card__label {
+  font: var(--label-font);
+  letter-spacing: var(--label-letter-spacing);
+  text-transform: uppercase;
+  color: var(--card-clr);
+  margin-bottom: var(--label-spacer);
+}
+
+.card__title {
+  font: var(--title-font);
+  color: var(--title-clr);
+  margin-bottom: var(--title-spacer);
+}
+
+.card__description {
+  margin-bottom: var(--description-spacer);
+}
+
+.card__price-container {
+  margin-bottom: var(--price-spacer);
+  display: flex;
+  gap: 1.19rem;
+  justify-content: start;
+  align-items: center;
+}
+
+.card__price {
+  font: var(--price-font);
+  color: var(--price-clr);
+}
+
+.card__old-price {
+  text-decoration: line-through;
+  font: var(--old-price-font);
+}
+
+.card__btn {
+  padding-block: 0.94rem;
+  border-radius: 0.5rem;
+  border: none;
+  font: var(--btn-font);
+  color: var(--btn-clr);
+  background: var(--btn-bg);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.72594rem;
+  cursor: pointer;
+}
+
+.card__btn:hover,
+.card__btn:focus {
+  --btn-bg: var(--btn-hover-bg);
+}
+
+.card__btn-icon {
+  width: 0.89906rem;
+  height: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@container card-container (width > 37.4rem) {
+  .card {
+    --card-content-padding: 2rem;
+    --label-spacer: 1.25rem;
+    --title-spacer: 1.5rem;
+    --description-spacer: 1.81rem;
+    --price-spacer: 1.88rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card__img {
+    background: var(--img-mask-gradient),
+      center / cover url(images/image-product-desktop.jpg);
+    aspect-ratio: auto;
+  }
+}
