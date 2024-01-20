@@ -9,6 +9,7 @@ This is a solution to the [Product preview card component challenge on Frontend 
   - [Overview](#overview)
     - [The challenge](#the-challenge)
     - [Screenshot](#screenshot)
+  - [Links](#links)
 
 ## Overview
 
@@ -24,3 +25,8 @@ Users should be able to
 | Desktop | Mobile |
 | ------- | ------ |
 | <img src="screenshots/desktop.png" width="400"> | <img src="screenshots/mobile.png" width="200"> |
+
+## Links
+
+* Solution: [frontendmentor.io](https://www.frontendmentor.io/solutions/product-preview-card-component-container-css-custom-properties-08ezoQP6DT)
+* Live: [solution](https://kosmonavtsv.github.io/fm-product-preview-card-component/)
